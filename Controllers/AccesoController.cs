@@ -11,7 +11,7 @@ namespace PTR.Controllers
     public class AccesoController : Controller
     {
 
-        static string cadena = "Data Source=(local);Initial Catalog=DB_PTR;Integrated Security=true";
+        static string cadena = "Data Source=NICO-NOTE\\SQLEXPRESS;Initial Catalog=DB_PTR;Integrated Security=true"; //acople
 
         // GET: Acceso
         public ActionResult Login()
@@ -37,22 +37,22 @@ namespace PTR.Controllers
             }
             else
             {
-                ViewData["mensaje"] = "Las contrasenias no coinciden";
+                ViewData["mensaje"] = "Las contraseñas no coinciden";
                 return View();
             }
 
             using (SqlConnection cn = new SqlConnection(cadena))
             {
                 SqlCommand cmd = new SqlCommand("pa_registrar_usuario", cn);
-                cmd.Parameters.AddWithValue("PrimerNombre", oUsuario.primer_nom);
-                cmd.Parameters.AddWithValue("SegundoNombre", oUsuario.segundo_nom);
-                cmd.Parameters.AddWithValue("PrimerApellido", oUsuario.primer_ape);
-                cmd.Parameters.AddWithValue("SegundoApellido", oUsuario.segundo_ape);
-                cmd.Parameters.AddWithValue("Telefono", oUsuario.telefono);
-                cmd.Parameters.AddWithValue("Rut", oUsuario.rut);
+                cmd.Parameters.AddWithValue("primer_nom", oUsuario.primer_nom);
+                cmd.Parameters.AddWithValue("segundo_nom", oUsuario.segundo_nom);
+                cmd.Parameters.AddWithValue("primer_ape", oUsuario.primer_ape);
+                cmd.Parameters.AddWithValue("segundo_ape", oUsuario.segundo_ape);
+                cmd.Parameters.AddWithValue("telefono", oUsuario.telefono);
+                cmd.Parameters.AddWithValue("rut", oUsuario.rut);
                 cmd.Parameters.AddWithValue("DV", oUsuario.DV);
-                cmd.Parameters.AddWithValue("Correo", oUsuario.correo);
-                cmd.Parameters.AddWithValue("Contrasenia", oUsuario.contrasenia);
+                cmd.Parameters.AddWithValue("correo", oUsuario.correo);
+                cmd.Parameters.AddWithValue("contrasenia", oUsuario.contrasenia);
                 cmd.Parameters.Add("registrado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("mensaje", SqlDbType.VarChar,100).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -102,7 +102,7 @@ namespace PTR.Controllers
             }
             else
             {
-                ViewData["mensaje"] = "Usuario no encontrad";
+                ViewData["mensaje"] = "Usuario no encontrado";
                 return View();
             }
 
