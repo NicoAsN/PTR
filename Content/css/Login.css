@@ -58,6 +58,8 @@ html {
     .login_btn:focus {
         box-shadow: none !important;
         outline: 0px !important;
+        background: #505050 !important;
+        color: white !important;
     }
 
 .login_container {
