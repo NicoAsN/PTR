@@ -30,15 +30,48 @@ namespace PTR.Controllers
             bool registrado;
             string mensaje;
 
-            if(oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+            if (oUsuario.primer_nom == null)
             {
-                oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
-
+                ViewData["mensaje"] = "Ingrese el primer nombre";
+                return View();
             }
             else
             {
-                ViewData["mensaje"] = "Las contraseñas no coinciden";
-                return View();
+                if (oUsuario.segundo_nom == null)
+                {
+                    ViewData["mensaje"] = "Ingrese el segundo nombre";
+                    return View();
+                }
+                else
+                {
+                    if (oUsuario.primer_ape == null)
+                    {
+                        ViewData["mensaje"] = "Ingrese el primer apellido";
+                        return View();
+                    }
+                    else
+                    {
+                        if (oUsuario.contrasenia == null)
+                        {
+                            ViewData["mensaje"] = "Ingrese la contrasenia";
+                            return View();
+                        }
+                        else
+                        {
+                            if (oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+                            {
+                                oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
+
+                            }
+                            else
+                            {
+                                ViewData["mensaje"] = "Las contraseñas no coinciden";
+                                return View();
+                            }
+                        }
+                    }
+
+                }
             }
 
             using (SqlConnection cn = new SqlConnection(cadena))
