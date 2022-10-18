@@ -58,29 +58,67 @@ namespace PTR.Controllers
                         }
                         else
                         {
-                            if (oUsuario.contrasenia == null)
+                            if (oUsuario.telefono == 0)
                             {
-                                ViewData["mensaje"] = "Ingrese la contrasenia";
+                                ViewData["mensaje"] = "Ingrese el telefono";
                                 return View();
                             }
                             else
                             {
-                                if (oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+                                if (oUsuario.rut == 0)
                                 {
-                                    oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
-
+                                    ViewData["mensaje"] = "Ingrese el rut sin digito verificador";
+                                    return View();
                                 }
                                 else
                                 {
-                                    ViewData["mensaje"] = "Las contraseñas no coinciden";
-                                    return View();
+                                    if (oUsuario.DV == null)
+                                    {
+                                        ViewData["mensaje"] = "Ingrese el digito verificador";
+                                        return View();
+                                    }
+                                    else
+                                    {
+                                        if (oUsuario.correo == null)
+                                        {
+                                            ViewData["mensaje"] = "Ingrese el correo";
+                                            return View();
+                                        }
+                                        else
+                                        {
+                                            if (oUsuario.contrasenia == null)
+                                            {
+                                                ViewData["mensaje"] = "Ingrese la contrasenia";
+                                                return View();
+                                            }
+                                            else
+                                            {
+                                                if (oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+                                                {
+                                                    oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
+
+                                                }
+                                                else
+                                                {
+                                                    ViewData["mensaje"] = "Las contraseñas no coinciden";
+                                                    return View();
+                                                }
+                                            }
+
+                                        }
+                                        
+                                    }
+                                    
                                 }
+                                
                             }
+                            
                         }
                         
                     }
 
                 }
+
             }
 
             using (SqlConnection cn = new SqlConnection(cadena))
