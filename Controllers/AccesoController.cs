@@ -51,24 +51,33 @@ namespace PTR.Controllers
                     }
                     else
                     {
-                        if (oUsuario.contrasenia == null)
+                        if (oUsuario.segundo_ape == null)
                         {
-                            ViewData["mensaje"] = "Ingrese la contrasenia";
+                            ViewData["mensaje"] = "Ingrese el segundo apellido";
                             return View();
                         }
                         else
                         {
-                            if (oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+                            if (oUsuario.contrasenia == null)
                             {
-                                oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
-
+                                ViewData["mensaje"] = "Ingrese la contrasenia";
+                                return View();
                             }
                             else
                             {
-                                ViewData["mensaje"] = "Las contraseñas no coinciden";
-                                return View();
+                                if (oUsuario.contrasenia == oUsuario.confirmar_contrasenia)
+                                {
+                                    oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
+
+                                }
+                                else
+                                {
+                                    ViewData["mensaje"] = "Las contraseñas no coinciden";
+                                    return View();
+                                }
                             }
                         }
+                        
                     }
 
                 }
