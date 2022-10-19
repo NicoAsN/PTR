@@ -161,7 +161,25 @@ namespace PTR.Controllers
         [HttpPost]
         public ActionResult Login(Usuario oUsuario)
         {
-            oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
+
+            if (oUsuario.correo == null)
+            {
+                ViewData["mensaje"] = "Ingrese su correo";
+                return View();
+            }
+            else
+            {
+                if (oUsuario.contrasenia == null)
+                {
+                    ViewData["mensaje"] = "Ingrese su contraseña";
+                    return View();
+                }
+                else
+                {
+                    oUsuario.contrasenia = ConvertirSha256(oUsuario.contrasenia);
+                }
+            }
+            
 
             using (SqlConnection cn = new SqlConnection(cadena))
             {

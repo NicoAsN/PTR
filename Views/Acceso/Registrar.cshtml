@@ -26,65 +26,75 @@
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form action="@Url.Action("Registrar","Acceso")" method="post">
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="contenido">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="primer_nom" class="form-control input_user" value="" placeholder="Primer Nombre">
                             </div>
-                            <input type="text" name="primer_nom" class="form-control input_user" value="" placeholder="Primer Nombre">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="segundo_nom" class="form-control input_user" value="" placeholder="Segundo Nombre">
+                            </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="contenido">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="primer_ape" class="form-control input_user" value="" placeholder="Apellido Paterno">
                             </div>
-                            <input type="text" name="segundo_nom" class="form-control input_user" value="" placeholder="Segundo Nombre">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" name="segundo_ape" class="form-control input_user" value="" placeholder="Apellido Materno">
+                            </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="contenido">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class='fas fa-phone'></i></span>
+                                </div>
+                                <input type="tel" name="telefono" class="form-control input_pass" value="" placeholder="telefono">
                             </div>
-                            <input type="text" name="primer_ape" class="form-control input_user" value="" placeholder="Apellido Paterno">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" name="correo" class="form-control input_user" value="" placeholder="Correo Electronico">
+                            </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="contenido">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                </div>
+                                <input type="text" name="rut" class="form-control input_pass" value="" placeholder="Rut sin digito verificador">
                             </div>
-                            <input type="text" name="segundo_ape" class="form-control input_user" value="" placeholder="Apellido Materno">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                </div>
+                                <input type="text" name="DV" class="form-control input_user" value="" placeholder="Digito Verificador">
+                            </div>
                         </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                        <div class="contenido">
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" name="contrasenia" class="form-control input_user" value="" placeholder="Contasenia">
                             </div>
-                            <input type="tel" name="telefono" class="form-control input_pass" value="" placeholder="telefono">
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <div class="input-group mb-3 inner">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" name="confirmar_contrasenia" class="form-control input_user" value="" placeholder="Confirmar contasenia">
                             </div>
-                            <input type="text" name="rut" class="form-control input_pass" value="" placeholder="Rut sin digito verificador">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" name="DV" class="form-control input_user" value="" placeholder="Digito Verificador">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            </div>
-                            <input type="text" name="correo" class="form-control input_user" value="" placeholder="Correo Electronico">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" name="contrasenia" class="form-control input_user" value="" placeholder="Contasenia">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" name="confirmar_contrasenia" class="form-control input_user" value="" placeholder="Confirmar contasenia">
                         </div>
 
                         @if (ViewData["mensaje"] != null)
@@ -95,7 +105,7 @@
                         }
 
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" name="button" class="btn login_btn">Registrarse</button>
+                            <button type="submit" name="button" class="btn login_btn" >Registrarse</button>
                         </div>
                     </form>
                 </div>

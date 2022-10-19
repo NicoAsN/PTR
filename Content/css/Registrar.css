@@ -12,7 +12,7 @@ html {
 
 .user_card {
     height: auto;
-    width: 350px;
+    width: auto;
     margin-top: auto;
     margin-bottom: auto;
     background: #fff1ef;
@@ -58,6 +58,8 @@ html {
     .login_btn:focus {
         box-shadow: none !important;
         outline: 0px !important;
+        background: #505050 !important;
+        color: white !important;
     }
 
 .login_container {
@@ -80,3 +82,17 @@ html {
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: green !important;
 }
+
+.contenido {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner {
+    margin: 5px;
+    flex: 1;
+    min-width: 100px;
+    padding: 5px;
+}
+

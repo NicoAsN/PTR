@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Content",
+    "\\Content\\css",
+    "\\Controllers",
+    "\\Views",
+    "\\Views\\Acceso"
   ],
-  "SelectedNode": "\\PTR.sln",
+  "SelectedNode": "\\Views\\Acceso\\Login.cshtml",
   "PreviewInSolutionExplorer": false
 }
